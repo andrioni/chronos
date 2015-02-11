@@ -23,7 +23,7 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
   final val cpusResourceName = "cpus"
   final val memResourceName = "mem"
   final val diskResourceName = "disk"
-  val taskNameTemplate = "ChronosTask:%s"
+  val taskNameTemplate = "ChronosTask-%s"
   //args|command.
   //  e.g. args: -av (async job), verbose mode
   val executorArgsPattern = "%s|%s"

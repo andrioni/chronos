@@ -19,9 +19,9 @@ import scala.collection.mutable
 object TaskUtils {
 
   //TaskIdFormat: ct:JOB_NAME:DUE:ATTEMPT:ARGUMENTS
-  val taskIdTemplate = "ct:%d:%d:%s:%s"
+  val taskIdTemplate = "ct-%d-%d-%s-%s"
   val argumentsPattern = """(.*)?""".r
-  val taskIdPattern = """ct:(\d+):(\d+):%s:?%s""".format(JobUtils.jobNamePattern, argumentsPattern).r
+  val taskIdPattern = """ct-(\d+)-(\d+)-%s-?%s""".format(JobUtils.jobNamePattern, argumentsPattern).r
   private[this] val log = Logger.getLogger(getClass.getName)
 
   def getTaskStatus(job: BaseJob, due: DateTime, attempt: Int = 0): TaskStatus = {
